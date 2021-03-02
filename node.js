@@ -24,10 +24,9 @@ const postQs = [{
         name: 'itemName'
     },
     {
-        type: 'list',
+        type: 'input',
         message: 'What category would you like to place your auction in? ',
-        name: 'category',
-        choices: category
+        name: 'category'
     },
     {
         type: 'input',
@@ -62,12 +61,10 @@ function post(category) {
             main();
         })
 };
-
 async function main() {
     var bidBuy = await start();
     if (bidBuy === "[POST]") {
-        var category = readCategory();
-        post(category);
+        post();
     } else {
         bid();
     }
